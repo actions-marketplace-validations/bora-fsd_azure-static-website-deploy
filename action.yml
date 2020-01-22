@@ -8,6 +8,9 @@ inputs:
   SOURCE_DIR:
     description: "The name of the directory you want to upload"
     required: true
+  FILE_PATTERN:
+    description: "The pattern used for globbing files or blobs in the source. The supported patterns are '*', '?', '[seq]', and '[!seq]'."
+    required: false
   AZURE_CLIENT_ID:
     description: "Your Azure Client ID"
     required: true
@@ -35,6 +38,7 @@ runs:
   image: "Dockerfile"
   args:
     - ${{ inputs.SOURCE_DIR }}
+    - ${{ inputs.FILE_PATTERN }}
     - ${{ inputs.AZURE_CLIENT_ID }}
     - ${{ inputs.AZURE_TENANT_ID }}
     - ${{ inputs.AZURE_SECRET }}
