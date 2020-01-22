@@ -22,6 +22,7 @@ jobs:
       - uses: feeloor/azure-static-website-deploy@master
         env:
           SOURCE_DIR: "./public"
+          FILE_PATTERN: "*.html"
           AZURE_CLIENT_ID: "<azure-client-id>"
           AZURE_TENANT_ID: "<azure-tenant-id>"
           AZURE_SECRET: "<azure-secret>"
@@ -36,6 +37,7 @@ jobs:
 | Key | Value | Type | Required |
 | ------------- | ------------- | ------------- | ------------- |
 | `SOURCE_DIR` | The name of the directory you want to upload | `env` | **Yes** |
+| `FILE_PATTERN` | The pattern used for globbing files or blobs in the source. The supported patterns are '*', '?', '[seq]', and '[!seq]'. | `env` | **No** |
 | `AZURE_CLIENT_ID` | Your Azure Client ID. | `secret` | **Yes** |
 | `AZURE_SECRET` | Your Azure Secret. | `secret` | **Yes** |
 | `AZURE_TENANT_ID` | Your Azure Tenant ID. | `secret` | **Yes** |
