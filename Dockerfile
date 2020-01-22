@@ -6,7 +6,7 @@ LABEL "com.github.actions.icon"="box"
 LABEL "com.github.actions.color"="green"
 LABEL "repository"="https://github.com/feeloor/azure-static-website-deploy"
 LABEL "homepage"="https://github.com/feeloor/azure-static-website-deploy"
-LABEL "maintainer"="Felix Khoi <feeloor@github.com>"
+LABEL "maintainer"="Bora Bilgin"
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x entrypoint.sh
