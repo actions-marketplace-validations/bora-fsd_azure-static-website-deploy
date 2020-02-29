@@ -32,6 +32,15 @@ inputs:
   AZURE_ERROR_DOCUMENT_NAME:
     description: "If the server returns a 404 error, and you have not specified an error document when you enabled the website, then a default 404 page is returned to the user."
     required: false
+  CDN_PROFILE:
+    description: "CDN Profile to purge"
+    required: false
+  CDN_ENDPOINT:
+    description: "CDN Endpoint that the CDN Profile belongs to"
+    required: false
+  RESOURCE_GROUP:
+    description: "Resource group for CDN Profile"
+    required: false
 outputs:
 runs:
   using: "docker"
@@ -46,3 +55,6 @@ runs:
     - ${{ inputs.AZURE_STORAGE_ACCOUNT_NAME }}
     - ${{ inputs.AZURE_INDEX_DOCUMENT_NAME }}
     - ${{ inputs.AZURE_ERROR_DOCUMENT_NAME }}
+    - ${{ inputs.CDN_PROFILE }}
+    - ${{ inputs.CDN_ENDPOINT }}
+    - ${{ inputs.RESOURCE_GROUP }}
