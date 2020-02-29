@@ -30,6 +30,9 @@ jobs:
           AZURE_STORAGE_ACCOUNT_NAME: "<azure-storage-account-name>"
           AZURE_INDEX_DOCUMENT_NAME: "<index-document-name>"
           AZURE_ERROR_DOCUMENT_NAME: "<error-document-name>"
+          CDN_PROFILE: "<Content delivery network profile to purge>"
+          RESOURCE_GROUP: "<resource group that the CDN belongs to>"
+          CDN_ENDPOINT: "<cdn endpoint that the cdn profile belongs to>"
 ```
 
 ### Required Variables
@@ -45,7 +48,9 @@ jobs:
 | `AZURE_STORAGE_ACCOUNT_NAME` | Your Azure Storage Account Name. | `secret` | **Yes** |
 | `AZURE_INDEX_DOCUMENT_NAME` | The index document that you specify when you enable static website hosting, appears when users open the site and don't specify a specific file. [More Information Here](https://docs.microsoft.com/en-US/azure/storage/blobs/storage-blob-static-website#viewing-content) | `env` | **Yes** |
 | `AZURE_ERROR_DOCUMENT_NAME` | If the server returns a 404 error, and you have not specified an error document when you enabled the website, then a default 404 page is returned to the user. [More Information Here](https://docs.microsoft.com/en-US/azure/storage/blobs/storage-blob-static-website#viewing-content) | `secret` | **No** |
-
+| `CDN_PROFILE` | Name of the Content Delivery Network to purge after deployment | `env` | **No** |
+| `CDN_ENDPOINT` | CDN Endpoint that the CDN Profile belongs to | `env` | **No** |
+| `RESOURCE_GROUP` | Resource group that the CDN Profile belongs to | `env` | **No** |
 
 ## License
 
