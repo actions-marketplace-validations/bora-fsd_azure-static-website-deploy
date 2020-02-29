@@ -54,3 +54,8 @@ if [ -z "$FILE_PATTERN" ]; then
 else
   az storage blob upload-batch -s ${SOURCE_DIR} --pattern ${FILE_PATTERN} -d \$web --account-name ${AZURE_STORAGE_ACCOUNT_NAME}
 fi
+
+# Purge CDN Endpoint
+if [ -z "$CDN_ENDPOINT" ]; then
+  az cdn endpoint purge -g ${RESOURCE_GROUP} -n ${CDN_ENDPOINT} --profile-name ${CDN_PROFILE} --content-paths '/*' 
+fi
