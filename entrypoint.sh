@@ -56,6 +56,10 @@ else
 fi
 
 # Purge CDN Endpoint
-if [ -z "$CDN_ENDPOINT" ]; then
-  az cdn endpoint purge -g ${RESOURCE_GROUP} -n ${CDN_ENDPOINT} --profile-name ${CDN_PROFILE} --content-paths '/*' 
+if [ -n "$CDN_ENDPOINT" ]; then
+  if [ -n "$RESOURCE_GROUP" ]; then
+    if [ -n "$CDN_PROFILE" ]; then
+       az cdn endpoint purge -g ${RESOURCE_GROUP} -n ${CDN_ENDPOINT} --profile-name ${CDN_PROFILE} --content-paths '/*' 
+    fi
+  fi
 fi
