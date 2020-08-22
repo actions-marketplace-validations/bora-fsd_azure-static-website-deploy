@@ -41,7 +41,6 @@ inputs:
   RESOURCE_GROUP:
     description: "Resource group for CDN Profile"
     required: false
-outputs:
 runs:
   using: "docker"
   image: "Dockerfile"
